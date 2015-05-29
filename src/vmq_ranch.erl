@@ -133,7 +133,7 @@ fast_close({ssl, Socket}) ->
     %% should take place (see RFC 5245 s7.2.1). So we call ssl:close
     %% instead, but that can block for a very long time, e.g. when
     %% there is lots of pending output and there is tcp backpressure,
-    %% or the ssl_connection process has entered the the
+    %% or the ssl_connection process has entered the
     %% workaround_transport_delivery_problems function during
     %% termination, which, inexplicably, does a gen_tcp:recv(Socket,
     %% 0), which may never return if the client doesn't send a FIN or
